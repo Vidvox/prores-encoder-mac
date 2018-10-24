@@ -10,7 +10,7 @@
 		EA00ADFC1D37C5D20024BCC9 /* MovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA00ADFB1D37C5D20024BCC9 /* MovieWriter.m */; };
 		EA319F6C1D34C7E70033992D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA319F6B1D34C7E70033992D /* AVFoundation.framework */; };
 		EA319F6E1D34C8AC0033992D /* prenc.m in Sources */ = {isa = PBXBuildFile; fileRef = EA319F6D1D34C8AC0033992D /* prenc.m */; };
-		EA54A73A1D378B7D0085E339 /* ProresEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54A7391D378B7D0085E339 /* ProresEncoder.m */; };
+		EA54A73A1D378B7D0085E339 /* ProresEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA54A7391D378B7D0085E339 /* ProresEncoder.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +31,7 @@
 		EA319F611D34C75D0033992D /* prenc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = prenc; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA319F6B1D34C7E70033992D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EA319F6D1D34C8AC0033992D /* prenc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = prenc.m; sourceTree = "<group>"; };
-		EA54A7391D378B7D0085E339 /* ProresEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProresEncoder.m; sourceTree = "<group>"; };
+		EA54A7391D378B7D0085E339 /* ProresEncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProresEncoder.mm; sourceTree = "<group>"; };
 		EA54A73B1D378BC30085E339 /* ProresEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProresEncoder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				EA319F6D1D34C8AC0033992D /* prenc.m */,
-				EA54A7391D378B7D0085E339 /* ProresEncoder.m */,
+				EA54A7391D378B7D0085E339 /* ProresEncoder.mm */,
 				EA54A73B1D378BC30085E339 /* ProresEncoder.h */,
 				EA00ADFB1D37C5D20024BCC9 /* MovieWriter.m */,
 				EA00ADFD1D37C5E20024BCC9 /* MovieWriter.h */,
@@ -116,6 +116,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = EA319F581D34C75D0033992D;
 			productRefGroup = EA319F621D34C75D0033992D /* Products */;
@@ -133,7 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA319F6E1D34C8AC0033992D /* prenc.m in Sources */,
-				EA54A73A1D378B7D0085E339 /* ProresEncoder.m in Sources */,
+				EA54A73A1D378B7D0085E339 /* ProresEncoder.mm in Sources */,
 				EA00ADFC1D37C5D20024BCC9 /* MovieWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +160,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -181,7 +182,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.11;
 			};
 			name = Debug;
 		};
@@ -203,7 +204,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -218,7 +219,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.11;
 			};
 			name = Release;
 		};

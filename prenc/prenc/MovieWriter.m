@@ -42,6 +42,7 @@
 
 - (id)initWithOutFile:(NSString *)outFileName timescale:(CMTimeScale)ts
 {
+	//NSLog(@"%s ... %@",__func__,outFileName);
     NSURL   *url = nil;
     NSError *error;
 

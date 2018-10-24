@@ -43,6 +43,8 @@
  * @param darDen display aspect ratio denumerator
  * @param interlace interlaced video or not
  * @param enableHwAccelerated enable HW accelerated
+ * @param highQualityFlag if YES the encoder will expect kCVPixelFormatType_4444AYpCbCr16 and will produce 12-bit ProRes 444
+ * @param verifyOutput if YES and highQualityFlag is also YES the returned object will create a decoder, decode frames immediately after they've been encoded, and calculate the MSE and PSNR per-frame by comparing the raw frames to the decoded frames.  this is substantially slower.
  *
  * @return initialized ProresEncoder instance, nil otherwise
  */
@@ -53,7 +55,9 @@
              darNum:(uint32_t)darNum
              darDen:(uint32_t)darDen
           interlace:(BOOL)interlace
-enableHwAccelerated:(BOOL)enableHwAccelerated;
+enableHwAccelerated:(BOOL)enableHwAccelerated
+    highQualityFlag:(BOOL)hqFlag
+       verifyOutput:(BOOL)verify;
 
 /**
  * Encodes YUV 4:2:2 16-bit image data and puts result to internal buffer.
@@ -62,6 +66,14 @@ enableHwAccelerated:(BOOL)enableHwAccelerated;
  * @return YES on success encoding, NO otherwise
  */
 - (BOOL)encodeWithRawImage:(uint8_t *)rawimg;
+
+/**
+ * Encodes the passed CVPixelBufferRef
+ * 
+ * @param n the CVPixelBufferRef you want to encode.  probably either kCVPixelFormatType_422YpCbCr16 or kCVPixelFormatType_4444AYpCbCr16.
+ * @return YES on success encoding, NO otherwise
+ */
+- (BOOL)encodePixelBufferRef:(CVPixelBufferRef)n;
 
 /**
  * Gets encoded frame from internal queue.
