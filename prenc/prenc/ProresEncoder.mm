@@ -106,8 +106,9 @@ static void frameEncodedCb(
 @implementation ProresEncoder
 
 + (void) initialize {
-    VTRegisterProfessionalVideoWorkflowVideoEncoders();
-    VTRegisterProfessionalVideoWorkflowVideoDecoders();
+	//	i don't know why, but if you call these functions on 10.11 then attempts to create encoders later will fail with an error -1293
+    //VTRegisterProfessionalVideoWorkflowVideoEncoders();
+    //VTRegisterProfessionalVideoWorkflowVideoDecoders();
 }
 
 - (id)init
